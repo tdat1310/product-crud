@@ -3,13 +3,14 @@
   "homepage": "https://tdat1310.github.io/product-crud/",
   "version": "0.0.0",
   "type": "module",
+  "private":"false",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+     "preview": "vite preview --port 5173"
   },
   "dependencies": {
     "gh-pages": "^6.3.0",
