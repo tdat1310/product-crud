@@ -224,28 +224,37 @@ const AddEditProductPage = () => {
                     </button>
                   </div>
                 )}
-                <input
-                  type="file"
-                  name="imageUrl"
-                  required
-                  ref={fileInputRef}
-                  onChange={(e) => {
-                    const file = e.target.files ? e.target.files[0] : null;
-                    if (file) {
-                      const reader = new FileReader();
-                      reader.onload = () => {
-                        const base64Image = reader.result as string; // Dữ liệu base64
-                        setProduct((prev) => ({
-                          ...prev,
-                          imageUrl: base64Image, // Lưu base64 vào state
-                          imageName: file.name, // Lưu tên file
-                        }));
-                      };
-                      reader.readAsDataURL(file); // Chuyển đổi file thành base64
+               <input
+                type="file"
+                name="imageUrl"
+                required
+                ref={fileInputRef}
+                onChange={(e) => {
+                  const file = e.target.files ? e.target.files[0] : null;
+                  if (file) {
+                    // Kiểm tra nếu file là ảnh
+                    const fileType = file.type.split('/')[0];
+                    if (fileType !== 'image') {
+                      alert("Vui lòng chọn một file ảnh!");
+                      resetFileInput()
+                      return;
                     }
-                  }}
-                  style={{ width: "70%", marginTop: "10px" }}
-                />
+                    
+                    const reader = new FileReader();
+                    reader.onload = () => {
+                      const base64Image = reader.result as string; // Dữ liệu base64
+                      setProduct((prev) => ({
+                        ...prev,
+                        imageUrl: base64Image, // Lưu base64 vào state
+                        imageName: file.name, // Lưu tên file
+                      }));
+                    };
+                    reader.readAsDataURL(file); // Chuyển đổi file thành base64
+                  }
+                }}
+                style={{ width: "70%", marginTop: "10px" }}
+              />
+
               </td>
             </tr>
 
