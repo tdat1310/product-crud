@@ -1,9 +1,8 @@
 {
   "name": "my-product-app",
-  "private": true,
+  "homepage": "https://tdat1310.github.io/product-crud/",
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://tdat1310.github.io/product-crud/",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
