@@ -17,7 +17,7 @@ const ProductListPage = () => {
   return (
     <div>
         <div style={{width: '100%', display:'flex', justifyContent: 'right'}}>
-            <Link  to={`/create-product`} style={{border:'1px solid black', padding: '5px 10px', color: 'black', textDecoration: 'none'}} >Tạo sản phẩm</Link>
+            <Link  to={`/product-crud/create-product`} style={{border:'1px solid black', padding: '5px 10px', color: 'black', textDecoration: 'none'}} >Tạo sản phẩm</Link>
             </div>
       <table style={{ width: "100%", borderCollapse: "collapse" }}>
         <thead>
@@ -56,7 +56,7 @@ const ProductListPage = () => {
               <td>
                 <Link
                   className="edit-btn"
-                  to={`/edit-product/${product.id}`}
+                  to={`/product-crud/edit-product/${product.id}`}
                   style={{
                     background: "#4bc04d",
                     padding: "5px 10px",

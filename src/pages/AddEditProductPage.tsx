@@ -89,7 +89,7 @@ const AddEditProductPage = () => {
       alert("Thêm sản phẩm mới thành công!");
     }
 
-    navigate("/"); // Chuyển hướng về trang danh sách sản phẩm
+    navigate("/product-crud"); // Chuyển hướng về trang danh sách sản phẩm
   };
 
   // Hàm reset input file
@@ -142,7 +142,6 @@ const AddEditProductPage = () => {
                 />
               </td>
             </tr>
-
             <tr>
               <td>
                 <label>Link</label>
@@ -289,7 +288,7 @@ const AddEditProductPage = () => {
           <button
             style={{ padding: "10px 20px", background: "white", border: "2px solid #343434", borderRadius: "5px", cursor: "pointer" }}
             onClick={() => {
-              navigate("/");
+              navigate("/product-crud");
             }}
           >
             Hủy
